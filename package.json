@@ -4,7 +4,7 @@
   "description": "Portfolio Albet Surya Kembara – VS Code Theme",
   "scripts": {
     "dev": "npx vite",
-    "build": "npx vite build",
+    "build": "npx --yes vite@5.4.19 build",
     "preview": "npx vite preview"
   },
   "devDependencies": {
