@@ -1,0 +1,50 @@
+/* ─── Base ───────────────────────────────────────────── */
+body {
+  font-family: 'Fira Code', 'Plus Jakarta Sans', monospace;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+}
+
+/* ─── Loading Spinner ────────────────────────────────── */
+.loader {
+  border-top-color: #007acc;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ─── Custom Scrollbar (VS Code style) ───────────────── */
+::-webkit-scrollbar       { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #1e1e1e; }
+::-webkit-scrollbar-thumb { background: #424242; }
+::-webkit-scrollbar-thumb:hover { background: #4f4f4f; }
+
+/* ─── Cursor Blink ───────────────────────────────────── */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.cursor-blink::after {
+  content: '_';
+  animation: blink 1s step-end infinite;
+  color: #007acc;
+}
+
+/* ─── Fade-in-up Reveal ──────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-reveal {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ─── Skill Bar Fill ─────────────────────────────────── */
+@keyframes fillWidth {
+  from { width: 0; }
+}
+.animate-skill-bar {
+  animation: fillWidth 1.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
+}

@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio - Albet Surya Kembara</title>
+
+    <!-- Favicon inline SVG -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='%2300F0FF'/><stop offset='1' stop-color='%230077FF'/></linearGradient></defs><path d='M50 6 L84 25.5 V74.5 L50 94 L16 74.5 V25.5 Z' fill='none' stroke='url(%23g)' stroke-width='6'/></svg>"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CDN (same as original) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            },
+          },
+        },
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-CyEEXmsI.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Hv8D6zc_.css">
+  </head>
+  <body
+    class="bg-[#1e1e1e] text-[#d4d4d4] h-screen overflow-hidden flex flex-col selection:bg-[#264f78]"
+  >
+    <!-- ─── Loading Screen ─────────────────────────────────────── -->
+    <div
+      id="loading-screen"
+      class="fixed inset-0 bg-[#1e1e1e] z-50 flex flex-col justify-center items-center"
+    >
+      <div
+        class="loader ease-linear rounded-full border-4 border-t-4 border-[#2d2d2d] h-12 w-12 mb-4"
+      ></div>
+      <p class="text-[#6a9955] text-xs font-mono">
+        <span class="cursor-blink">// Connecting to Google Sheets DB</span>
+      </p>
+    </div>
+
+    <!-- ─── App Shell ──────────────────────────────────────────── -->
+    <div class="flex flex-1 overflow-hidden">
+
+      <!-- Activity Bar -->
+      <div
+        class="w-12 bg-[#181818] border-r border-[#2b2b2b] flex flex-col justify-between items-center py-4 text-zinc-500 shrink-0 select-none"
+      >
+        <div class="flex flex-col gap-6 text-xl w-full items-center">
+          <div
+            class="text-[#007acc] border-l-2 border-[#007acc] w-full text-center py-0.5"
+            title="Explorer"
+          >
+            <i class="far fa-copy"></i>
+          </div>
+          <a
+            href="https://github.com"
+            target="_blank"
+            class="hover:text-zinc-300 transition-colors transform hover:scale-110 duration-200"
+          ><i class="fab fa-github"></i></a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            class="hover:text-zinc-300 transition-colors transform hover:scale-110 duration-200"
+          ><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="flex flex-col gap-5 text-xl">
+          <a
+            href="mailto:"
+            id="nav-cta"
+            class="hover:text-zinc-300 transition-colors transform hover:scale-110 duration-200"
+            title="Contact Me"
+          ><i class="far fa-envelope"></i></a>
+          <i
+            class="fas fa-cog hover:text-zinc-300 cursor-pointer transition-transform hover:rotate-45 duration-300"
+          ></i>
+        </div>
+      </div>
+
+      <!-- Sidebar Explorer -->
+      <div
+        class="w-64 bg-[#252526] border-r border-[#2b2b2b] hidden md:flex flex-col select-none shrink-0 text-xs"
+      >
+        <div
+          class="p-3 uppercase font-bold text-[10px] tracking-wider text-zinc-400 flex justify-between items-center"
+        >
+          <span>Explorer: Albet.dev</span>
+          <i class="fas fa-ellipsis-h"></i>
+        </div>
+        <div class="flex-1 overflow-y-auto">
+          <div
+            class="flex items-center px-3 py-1 text-zinc-300 font-bold bg-[#2d2d2d]/40"
+          >
+            <i class="fas fa-chevron-down mr-2 text-[10px]"></i>
+            <span class="truncate">portfolio-workspace</span>
+          </div>
+          <div class="pl-4 flex flex-col text-zinc-400 mt-1">
+            <a href="#about"  class="flex items-center px-3 py-1.5 hover:bg-[#2a2d2e] hover:text-white transition-all duration-150 group">
+              <i class="fab fa-js text-yellow-500 mr-2 text-sm transition-transform group-hover:scale-110"></i> about.json
+            </a>
+            <a href="#skills" class="flex items-center px-3 py-1.5 hover:bg-[#2a2d2e] hover:text-white transition-all duration-150 group">
+              <i class="fab fa-css3-alt text-blue-400 mr-2 text-sm transition-transform group-hover:scale-110"></i> skills.css
+            </a>
+            <a href="#experience" class="flex items-center px-3 py-1.5 hover:bg-[#2a2d2e] hover:text-white transition-all duration-150 group">
+              <i class="fab fa-git-alt text-orange-500 mr-2 text-sm transition-transform group-hover:scale-110"></i> experience.log
+            </a>
+            <a href="#education" class="flex items-center px-3 py-1.5 hover:bg-[#2a2d2e] hover:text-white transition-all duration-150 group">
+              <i class="fas fa-info-circle text-sky-400 mr-2 text-sm transition-transform group-hover:scale-110"></i> education.md
+            </a>
+            <a href="#projects" class="flex items-center px-3 py-1.5 hover:bg-[#2a2d2e] hover:text-white transition-all duration-150 group">
+              <i class="fab fa-react text-cyan-400 mr-2 text-sm transition-transform group-hover:scale-110"></i> projects.ts
+            </a>
+            <a href="#recommendations" class="flex items-center px-3 py-1.5 hover:bg-[#2a2d2e] hover:text-white transition-all duration-150 group">
+              <i class="far fa-comment-alt text-emerald-400 mr-2 text-sm transition-transform group-hover:scale-110"></i> testimonials.json
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Editor Area -->
+      <div class="flex-1 flex flex-col min-w-0 bg-[#1e1e1e]">
+
+        <!-- Tab Bar -->
+        <div
+          class="h-9 bg-[#2d2d2d] border-b border-[#1e1e1e] flex items-center overflow-x-auto text-xs text-zinc-400 select-none"
+        >
+          <div
+            class="bg-[#1e1e1e] text-white px-4 h-full flex items-center border-t-2 border-[#007acc] border-r border-[#252526] shrink-0"
+          >
+            <i class="fab fa-js text-yellow-500 mr-2"></i> main.portfolio
+            <i class="fas fa-times ml-3 opacity-60 hover:opacity-100 transition-opacity cursor-pointer"></i>
+          </div>
+          <div
+            class="px-4 h-full flex items-center border-r border-[#252526] opacity-50 shrink-0 hover:opacity-80 transition-opacity cursor-pointer"
+          >
+            <i class="fab fa-markdown text-blue-400 mr-2"></i> README.md
+          </div>
+        </div>
+
+        <!-- Breadcrumb -->
+        <div
+          class="h-6 bg-[#1e1e1e] border-b border-[#252526] px-4 flex items-center text-xs text-zinc-500 gap-2 select-none"
+        >
+          <span>src</span>
+          <i class="fas fa-chevron-right text-[9px]"></i>
+          <span>components</span>
+          <i class="fas fa-chevron-right text-[9px]"></i>
+          <span class="text-zinc-300">main.portfolio</span>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="flex-1 overflow-y-auto px-4 md:px-12 py-10 space-y-20">
+
+          <!-- About -->
+          <section id="about" class="scroll-mt-10 max-w-4xl">
+            <div class="text-zinc-600 text-xs select-none mb-2 font-mono">// 01. Profile Initialization</div>
+            <span class="text-[#c586c0]">const</span>
+            <span class="text-[#4fc1ff]"> softwareEngineer</span> = {
+            <div class="pl-6 mt-2 space-y-3 border-l border-zinc-800/40 ml-1">
+              <div>
+                <span class="text-[#9cdcfe]">status</span>:
+                <span class="text-[#ce9178] cursor-blink">"🚀 Open for Opportunities"</span>,
+              </div>
+              <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-white mt-1">
+                <span class="text-[#9cdcfe]">name</span>:
+                <span id="hero-name" class="text-[#ce9178]"></span>,
+              </h1>
+              <p class="text-lg sm:text-xl text-[#dcdcaa] mt-1">
+                <span class="text-[#9cdcfe]">role</span>:
+                <span id="hero-title" class="text-[#ce9178]"></span>,
+              </p>
+              <div>
+                <span class="text-[#9cdcfe]">stack</span>: [
+                <div id="hero-tagline" class="flex flex-wrap gap-2 my-2 pl-4"></div>
+                ],
+              </div>
+              <div class="text-sm text-zinc-400 max-w-2xl leading-relaxed">
+                <span class="text-[#9cdcfe]">bio</span>:
+                <span id="hero-about" class="text-[#ce9178]"></span>
+              </div>
+              <div class="flex flex-wrap gap-4 items-center pt-4">
+                <span class="text-[#9cdcfe]">links</span>: {
+                <a id="link-linkedin" href="#" target="_blank" class="text-[#ce9178] hover:text-white hover:underline px-1 transition-colors">
+                  <i class="fab fa-linkedin mr-1"></i>LinkedIn
+                </a>,
+                <a id="link-github" href="#" target="_blank" class="text-[#ce9178] hover:text-white hover:underline px-1 transition-colors">
+                  <i class="fab fa-github mr-1"></i>GitHub
+                </a>
+                }
+              </div>
+              <div class="flex items-center text-zinc-400 text-xs">
+                <span class="text-[#9cdcfe]">location</span>:
+                <span class="text-[#ce9178]">"<i class="fas fa-map-marker-alt text-[#569cd6] mr-1"></i><span id="hero-location" class="font-sans"></span>"</span>
+              </div>
+            </div>
+            <span class="text-zinc-400">};</span>
+            <div id="stats-container" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-10 border-t border-zinc-800 pt-8"></div>
+          </section>
+
+          <!-- Skills -->
+          <section id="skills" class="scroll-mt-10 max-w-4xl">
+            <div class="text-zinc-600 text-xs select-none mb-2 font-mono">// 02. Core Competencies & Tech Matrix</div>
+            <div class="mb-6">
+              <h2 class="text-xl font-bold text-[#569cd6]"># Technical Skills & Competencies</h2>
+              <p class="text-zinc-500 text-xs mt-1">Measured technology stack proficiency based on production and industrial implementations.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="skills-grid"></div>
+          </section>
+
+          <!-- Experience -->
+          <section id="experience" class="scroll-mt-10 max-w-4xl">
+            <div class="text-zinc-600 text-xs select-none mb-2 font-mono">// 03. Employment History Stack</div>
+            <div class="mb-8">
+              <h2 class="text-xl font-bold text-[#569cd6]"># Professional Experience</h2>
+              <p class="text-zinc-500 text-xs mt-1">Cross-disciplinary engineering and professional career track record.</p>
+            </div>
+            <div class="relative border-l border-zinc-800 ml-2 space-y-8" id="experience-timeline"></div>
+          </section>
+
+          <!-- Education -->
+          <section id="education" class="scroll-mt-10 max-w-4xl">
+            <div class="text-zinc-600 text-xs select-none mb-2 font-mono">// 04. Academic & Professional Credentials</div>
+            <div class="mb-8">
+              <h2 class="text-xl font-bold text-[#569cd6]"># Education & Bootcamp History</h2>
+              <p class="text-zinc-500 text-xs mt-1">Formal academic background and intensive professional engineering programs.</p>
+            </div>
+            <div class="grid grid-cols-1 gap-4" id="education-container"></div>
+          </section>
+
+          <!-- Projects -->
+          <section id="projects" class="scroll-mt-10 max-w-4xl">
+            <div class="text-zinc-600 text-xs select-none mb-2 font-mono">// 05. Production-ready System Repositories</div>
+            <div class="mb-8">
+              <h2 class="text-xl font-bold text-[#569cd6]"># Featured Project Repositories</h2>
+              <p class="text-zinc-500 text-xs mt-1">Production-ready applications built through modular system architecture exploration.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="projects-grid"></div>
+          </section>
+
+          <!-- Recommendations -->
+          <section id="recommendations" class="scroll-mt-10 max-w-4xl">
+            <div class="text-zinc-600 text-xs select-none mb-2 font-mono">// 06. Endorsements & Peer Reviews</div>
+            <div class="mb-8">
+              <h2 class="text-xl font-bold text-[#569cd6]"># Recommendations & Testimonials</h2>
+              <p class="text-zinc-500 text-xs mt-1">Peer reviews and endorsements from mentors and engineering project collaborators.</p>
+              <a
+                href="https://www.linkedin.com/in/albetsurya/details/recommendations/?detailScreenTabIndex=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[10px] text-[#0A66C2] mt-2 inline-block hover:underline"
+              >View all recommendations on LinkedIn ↗</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="recommendations-grid"></div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Bar -->
+    <footer
+      class="h-6 bg-[#007acc] text-white flex justify-between items-center px-3 text-xs select-none shrink-0 font-sans"
+    >
+      <div class="flex items-center gap-4">
+        <div class="bg-[#0066b3] px-2 h-full flex items-center font-bold tracking-wide">
+          <i class="fas fa-terminal mr-1.5"></i> Live API
+        </div>
+        <div class="text-[11px] opacity-90">
+          <i class="fas fa-code-branch mr-1"></i> main
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-[11px] opacity-90 font-mono">
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399] animate-pulse"></span>
+          <span>Google Sheets Database Sync</span>
+        </div>
+        <span>UTF-8</span>
+        <span>JSON/TS</span>
+      </div>
+    </footer>
+
+    <!-- Vite entry point -->
+  </body>
+</html>
